@@ -1,9 +1,7 @@
-const TaskInputProduct = document.getElementById("input_product");
-const TaskInputPrice = document.getElementById("input_price");
-const TaskInputImage = document.getElementById("input_image");
 const addTaskBt = document.getElementById("add_task_btn");
 
-let tasks = [];
+const productArray = [];
+let id = 0;
 
 /* const imageUrl = (TaskInputImage) => {
     const input = new URL(TaskInputImage);
@@ -11,21 +9,36 @@ let tasks = [];
 } */
 
 addTaskBt.addEventListener("click",() => {
-    const InProduct = TaskInputProduct.value.trim();
-    const InPrice = TaskInputPrice.value.trim();
-    const InImage = TaskInputImage.value;
-    if (InProduct, InPrice,InImage) {
-        const task = {
-            id: Date.now(),
-            text: InProduct,
-            price: InPrice,
-            Image: TaskInputImage
+    const nameProduct = document.getElementById("input_product").value.trim();
+    const price = document.getElementById("input_price").value.trim();
+    const urlImage = document.getElementById("input_image").value;
+    if (nameProduct && price && urlImage) {
+        const product = {
+            id: ++id,
+            name: nameProduct,
+            price: price,
+            image: urlImage
         };
-        tasks.push(task);
-        // renderTasks(tasks);
+        productArray.push(task);
+        renderTasks(productArray);
         TaskInputProduct.value = "";
         TaskInputPrice.value = "";
         TaskInputImage.value = "";
     }
 })
-console.log(tasks);
+
+function renderTasks(upload) {
+	const displaySection = document.getElementById("displayProduct");
+	const card = document.createElement("div");
+    card.className = "bg-white p-4 rounded-lg shadow-lg";
+
+    card.innerHTML=`
+    <input type="checkbox" class=""
+    <img src="${upload.TaskInputImage}" alt="${upload.TaskInputProduct}"
+    <h2>
+    <p>${TaskInputProduct}</p>
+    <p>${TaskInputPrice}</p>
+    </h2>
+    `;
+    displaySection.appendChild(card);
+}

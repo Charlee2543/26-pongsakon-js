@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<header>Shopping Cart</header>
-		<main>
+		<form>
 			<section class="addItem justify-start">
 				<span>Product Name:
 				<input
@@ -16,7 +16,6 @@
 					id="input_product"
 					name="Product Name"
 					class="border-2 border-blue-600 py-1 px-4 "
-					placeholder="Enter a new task"
 				/></span>
 				<span>Price:
 				<input
@@ -38,7 +37,11 @@
 					Add New Task
 				</button>
 			</section>
-		</main>
+		</form>
+		<section
+		id="displayProduct"
+		>
+		</section>
 		<footer>
 			<button id="bt-price">Calculate Final Price</button>
 			<h2 id="final-price"></h2>
