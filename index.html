@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Assessment</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Javascript Assessment</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<header>Shopping Cart</header>
+		<main>
+			<section class="addItem justify-start">
+				<span>Product Name:
+				<input
+					type="text"
+					id="input_product"
+					name="Product Name"
+					class="border-2 border-blue-600 py-1 px-4 "
+					placeholder="Enter a new task"
+				/></span>
+				<span>Price:
+				<input
+					type="text"
+					id="input_price"
+					name="Price"
+					class="border-2 border-blue-600 py-1 px-4"
+					placeholder="Enter a new task"
+				/></span>
+				<span>Image:
+				<input
+					type="url"
+					id="input_image"
+					name="Image"
+					class="border-2 border-blue-600 py-1 px-4"
+					placeholder="Enter a new task"
+				/></span>
+				<button id="add_task_btn" class="bg-[#25389c]  text-[#ffffff]">
+					Add New Task
+				</button>
+			</section>
+		</main>
+		<footer>
+			<button id="bt-price">Calculate Final Price</button>
+			<h2 id="final-price"></h2>
+		</footer>
+		<script src="Script.js"></script>
+	</body>
 </html>
